@@ -1,36 +1,136 @@
-// Grand Central Station
-
-@import 'google-homepage';
-
-
-// First Frame
-img {
-    
-    opacity: .5;
-    transform: scale(.25) rotate(0);
-    width: 40%;
-    
-    transition: transform .5s;
+#stage {
+  width: 600px;
+  height: 300px;
+  margin: auto;
+  margin-top: 75px;
+  border: 2px solid black;
+  overflow: hidden;
+  border-radius: 25px;
 }
 
-// Last Frame
-img:hover {
-    opacity: 1;
-    transform: scale(1.5) rotate(180deg);
+
+/* Makes the clouds move constantly */
+#clouds {
+  transform: translateX(75px);
+}
+#clouds {
+  animation-duration: 180s;
+  animation-name: wind;
+}
+@keyframes wind {
+  0% {
+   transform: translateX(75px);
+  }
+  50% {
+   transform: translateX(2000px);
+  }
+    100% {
+   transform: translateX(75px);
+  }
 }
 
-// First Frame
-.line {
-     fill:none;
-     stroke:#8cff19;
-     stroke-width:30;
-     stroke-miterlimit:10;
-    
-    transition: stroke 1s;
+
+/* Makes small Harry go from left to right every 6 seconds */
+#stage:hover #harryLeft{
+  animation: harryLeft 6s infinite;
+}
+@keyframes harryLeft {
+  0%{
+    transform: translateX(125px);
+  }
+  50%{
+    transform: translateX(125px);
+  }
+  100%{
+    transform: translateX(2000px);
+  }
 }
 
-// Last Frame
-.line:hover {
-    stroke: red;
+
+/* Makes big Harry go from right to left every 6 seconds */
+#stage:hover #harryRight{
+  animation: harryRight 6s infinite;
+}
+@keyframes harryRight {
+  0% {
+    transform: translateX(200px);
+  }
+  40% {
+    transform: translateX(-1800px);
+  }
+  100% {
+    transform: translateX(-1800px);
+}
+}
+ 
+
+/* Makes Google font fade out when hovering */
+ #stage:hover #google{
+    animation: fade forwards .5s ease-in-out;
+  }
+  @keyframes fade{
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: .0;
+    }
+  }
+
+
+/* Makes Google font fade in when moving away from hovering */
+#google{
+    animation: norm forwards .5s ease-in-out;
+  }
+  @keyframes norm{
+    0% {
+      opacity: .0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+#search, #search2 {
+  width: 600px;
+  box-shadow: 3px 3px 5px #888888;
+  resize: none;
+  text-align: center;
 }
 
+#search2 {
+  display: none;
+}
+
+#searchDiv {
+  width: 600px;
+  margin: auto;
+  margin-top: 25px;
+
+}
+
+#buttons {
+  display: flex;
+  width: 275px;
+  margin: auto;
+  margin-top: 25px;
+  justify-content: space-between;;
+}
+
+#searchButton, #lucky {
+  background: #eee;
+  width: 125px;
+  height: 35px;
+  border-radius: 10px;
+  box-shadow: 4px 4px 5px #888888;
+  text-align: center;
+  font-size: .8em;
+}
+
+#searchButton:hover, #lucky:hover {
+  box-shadow: none;
+}
+
+p {
+  margin-top: 10px;
+}

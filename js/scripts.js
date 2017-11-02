@@ -11,3 +11,13 @@ console.log(numRand);
 // Display randomized images
 $('#random').attr( 'src', eval('img' + numRand) );
 
+$(document).ready(function() {
+	$('#searchDiv').on('click', function(){
+		$('#search').toggle();
+	});
+});
+$(document).ready(function() {
+	$('#searchDiv').on('click', function(){
+		$('#search2').toggle();
+	});
+});
