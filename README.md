@@ -2,8 +2,9 @@
 
 ## Brainstorm Ideas
 
-* ABC
-* XYZ
+Harry Potter, Quiditch
+
+Having the search bar prefilled with a quote
 
 
 ## Content Doodle
